@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Kalkulator Listrik Rumah</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicons -->
+  <link href="assets/img/logo.png" rel="icon">
+  <link href="assets/img/logo.png" rel="apple-touch-icon">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- ICON -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-left">
+    <img src="assets/img/logo.png" alt="Logo" class="navbar-logo" id="appLogo">
+    <span class="navbar-title">Kalkulator Listrik</span>
+  </div>
+
+  <button 
+    class="toggle-theme" 
+    onclick="toggleTheme()" 
+    id="themeBtn"
+    aria-label="Toggle dark mode"
+  >
+    <i class="fas fa-moon"></i>
+  </button>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <img src="assets/img/logo.png" alt="Logo Besar" class="hero-logo" />
+
+    <h2>Kalkulator Konsumsi Listrik Rumah</h2>
+    <p>
+      Hitung estimasi pemakaian dan biaya listrik rumahmu dengan mudah,
+      cepat, dan akurat. Cocok untuk kebutuhan harian maupun bulanan.
+    </p>
+  </div>
+</section>
+
+
+</header>
+
+<div class="container">
+
+  <div class="card glass">
+    <div class="form-group">
+      <input type="text" id="name" placeholder="Nama Perangkat">
+      <input type="number" id="power" placeholder="Daya (Watt)">
+      <input type="number" id="hours" placeholder="Jam / Hari">
+      <button class="btn-primary" onclick="addDevice()">Tambah</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="form-group">
+      <input type="number" id="price" value="1444.7" placeholder="Harga per kWh">
+      <select id="mode" onchange="render()">
+        <option value="day">Per Hari</option>
+        <option value="month">Per Bulan</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="card">
+    <table>
+      <thead>
+        <tr>
+          <th>Perangkat</th>
+          <th>Daya (W)</th>
+          <th>Jam</th>
+          <th>kWh</th>
+          <th>Aksi</th>
+        </tr>
+      </thead>
+      <tbody id="deviceTable"></tbody>
+    </table>
+  </div>
+
+  <div class="summary">
+    <div class="card highlight">
+      <strong>Total Konsumsi</strong>
+      <p id="totalKwh">0 kWh</p>
+    </div>
+    <div class="card highlight">
+      <strong>Total Biaya</strong>
+      <p id="totalCost">Rp 0</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <canvas id="chart"></canvas>
+  </div>
+
+</div>
+
+<script src="assets/js/script.js"></script>
+
+<footer class="footer">
+  <p>
+    © 2026 Kalkulator Konsumsi Listrik Rumah ·
+    Design by
+    <a href="#" target="_blank">Ilyasa Ramdhany</a>
+  </p>
+
+  <div class="socials">
+    <a href="https://github.com/yasaramdh07" target="_blank">
+      <i class="fab fa-github"></i>
+    </a>
+    <a href="https://websitekamu.com" target="_blank">
+      <i class="fas fa-globe"></i>
+    </a>
+    <a href="https://www.instagram.com/yasaramdh_" target="_blank">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://linkedin.com/in/ilyasa-ramadhany-a26942252" target="_blank">
+      <i class="fab fa-linkedin"></i>
+    </a>
+  </div>
+</footer>
+
+</body>
+</html>
