@@ -16,11 +16,11 @@ function setTheme(mode) {
   if (mode === "dark") {
     document.body.classList.add("dark");
     themeBtn.innerHTML = '<i class="fas fa-moon"></i>';
-    if (logo) logo.src = "assets/img/logo.png";
+    if (logo) logo.src = "logo.png";
   } else {
     document.body.classList.remove("dark");
     themeBtn.innerHTML = '<i class="fas fa-sun"></i>';
-    if (logo) logo.src = "assets/img/logo2.png";
+    if (logo) logo.src = "logo2.png";
   }
 
   localStorage.setItem("theme", mode);
@@ -136,3 +136,4 @@ function renderChart(labels, data) {
     },
   });
 }
+
